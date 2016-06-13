@@ -114,4 +114,4 @@ allData <- select(allData, subject, activity, 3:68)
 summaryData<- allData%>% group_by(subject, activity) %>%
                     summarize_each(funs(mean))
 
-write.csv(summaryData, file="summaryData.csv")
+write.table(summaryData, file="summaryData.txt", row.names = FALSE)
